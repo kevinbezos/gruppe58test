@@ -1,0 +1,275 @@
+/* -kodet av Kevin & Martin */
+/* -kodet av Kevin & Martin */
+/* -kodet av Kevin & Martin */
+body {
+    margin: 1;
+}
+
+
+.main-container { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    animation: fadeIn 1s ease;
+    
+}
+@keyframes fadeIn {
+    0% {
+        filter: brightness(50%)
+    }
+
+    100% {
+        filter: brightness(100%);
+    }
+
+}
+
+#background-main {
+    width: 100%;
+    height: 100%;
+}
+
+#sky {
+    position: absolute;
+    background-image: linear-gradient(rgb(255, 153, 0), rgb(255, 179, 179) 80%);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -2;
+
+    animation: sunRise 9s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes sunRise {
+    0%{filter: hue-rotate(0deg);filter: brightness(50%);}
+    100%{filter: hue-rotate(15deg); filter: brightness(120%);}
+}
+
+#grass-sign {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    animation: sign 1s ease-in-out;
+    animation-fill-mode: forwards;
+    cursor: help;
+    clip-path: polygon(10% 52%, 18% 51%, 20% 47%, 32% 53%, 33% 73%, 24% 76%, 24% 100%, 19% 100%, 20% 76%, 10% 78%);
+}
+
+
+@keyframes sign {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+#egg {
+    position: absolute;
+    width: 9%;
+
+    transform: translate(50%, 250%);
+    transition: all 1s ease;
+
+    cursor: pointer;
+    clip-path: polygon(20% 12%, 78% 13%, 74% 85%, 21% 87%);
+
+
+}
+
+#egg:hover ~ #text-container {
+    opacity: 1;
+    transform: scale(1.02);
+
+
+
+}
+
+#egg2 {
+    position: absolute;
+    width: 9%;
+
+    filter: hue-rotate(-40deg);
+    transform: translate(200%, 240%);
+    clip-path: polygon(20% 12%, 78% 13%, 74% 85%, 21% 87%);
+    cursor: pointer;
+
+}
+
+#egg2:hover ~ #text-container2 {
+    opacity: 1;
+    transform: scale(1.02);
+
+}
+
+#egg3 {
+    position: absolute;
+    width: 12%;
+
+    filter: hue-rotate(40deg);
+    transform: translate(90%, 170%);
+    clip-path: polygon(20% 12%, 78% 13%, 74% 85%, 21% 87%);
+    cursor: pointer;
+}
+
+#egg3:hover ~ #text-container3 {
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+
+
+
+#sun {
+    position: absolute;
+    z-index: -2;
+    background-color: yellow;
+    width: 10vw;
+    height: 10vw; /* Use vw for both width and height for consistency */
+    transform: translate(-10%, 180%); /* Adjust based on desired positioning */
+    border-radius: 50%;
+    background-image: linear-gradient(rgb(238, 255, 0), rgb(243, 130, 0) 100%);
+    animation: sun 10s ease forwards;
+
+    filter: blur(2px);
+}
+
+@keyframes sun {
+    0%{transform: translate(-10%, 180%); filter: brightness(80%); }
+    100%{transform: translate(-10%, 120%); filter: brightness(110%);  }
+}
+
+
+
+
+
+#text-container { /* text container for første egget "oransje" */
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(230, 144, 64, 0.473);
+    width: 100%;
+    height: 10%;
+    z-index: 2;
+
+    transition: all 1s ease;
+
+    opacity: 0;
+}
+
+#text-container2 {   /* text container for siste egget "lilla" */
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(230, 144, 64, 0.473);
+    width: 100%;
+    height: 10%;
+    z-index: 2;
+
+    transition: all 1s ease;
+
+    opacity: 0;
+}
+
+#text-container3 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    z-index: 2;
+
+    transition: all 1s ease;
+
+    opacity: 0;
+    
+}
+
+
+
+#egg-text {
+    position: absolute;
+    color: white;
+    font-size: 1.5vw;
+    font-family: arial, sans-serif;
+
+    
+    
+
+
+}
+
+#arrow {
+    position: absolute;
+    width: 10vw;
+    top: 10%;
+    left: 5%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    clip-path: polygon(11% );
+
+}
+
+#arrow:hover {
+    filter: brightness(120%);
+}
+
+/* flying rabbit animation - Martin */
+/* flying rabbit animation - Martin */
+#egg3:hover + #rabbit {
+    animation: flyingRabbit 3s ease;
+    opacity: 1;
+
+    
+
+}
+
+#Bunny {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    z-index: -1;
+
+    animation: hopAcrossScreen 5s ease-in-out infinite;
+}
+
+@keyframes hopAcrossScreen {
+    0% {
+        transform: translateX(0) translateY(12vw);
+    }
+    25% {
+        transform: translateX(25vw) translateY(-20px); 
+    }
+    50% {
+        transform: translateX(50vw) translateY(0); 
+    }
+    75% {
+        transform: translateX(75vw) translateY(-20px); 
+    }
+    100% {
+        transform: translateX(100vw) translateY(0);
+    }
+}
+
+#blomar {
+    position: absolute;
+    width: 20vw;
+    transform: translate(-150%, 130%);
+
+    filter: blur(1px);
+}

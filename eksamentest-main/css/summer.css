@@ -1,0 +1,100 @@
+body{
+    margin: 0;
+}
+
+.backgroundImg {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-size:cover;
+    position: absolute;
+}
+
+.solImg{
+    position: absolute;
+    width: 15%;
+    top: 2%;
+    right: 6%;
+    animation: moveLeft 2s ease-in-out forwards;
+}
+
+@keyframes moveLeft { 
+    0% { right: 6%;}
+    100% {right: 35%;}
+ }
+ .sun-container{
+    position: relative;
+ }
+
+ .sunbox{
+    display: none;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    width: 250px;
+ }
+.summertext {
+width: 100%;
+padding: 8px;
+font-size: 14px;
+border: none;
+outline: none;
+background-color: transparent;
+resize: none;
+color: black;
+}
+
+.sun-container:hover .sunbox{
+    display: block;
+}
+.balImg{
+    position: absolute;
+    width: 10%;
+    bottom: 9%;
+    left: 6%;
+    animation: bounce 1.5s ease-in-out infinite;
+}
+@keyframes bounce{
+    0%, 100%{transform: translateY(0);}
+    50% {transform: translateY(-30px);}
+
+}
+
+
+.boatImg{
+    position: absolute;
+    width: 25%;
+    bottom: 20%;
+    right: 9%;
+    animation: float 3s ease-in-out infinite;
+  
+}
+@keyframes float{
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-10px);}
+    100% {transform: translateY(0);}
+}
+
+
+.arrowImg{
+    position: absolute;
+    width: 10%;
+    top: 4%;
+    left: 5%;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.arrowImg:hover {
+    transform: scale(1.1);
+}

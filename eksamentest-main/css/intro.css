@@ -1,0 +1,252 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+
+
+.main-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: fadeIn 4s ease;
+
+}
+
+@keyframes fadeIn {
+    0% {
+        filter: brightness(50%)
+    }
+
+    100% {
+        filter: brightness(100%);
+    }
+
+}
+
+/* Mountain Container */
+.second-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 2;
+    overflow: hidden;
+
+}
+
+
+#mountain {
+    display: block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    animation: fjell 8s ease forwards;
+}
+
+@keyframes fjell {
+    0% {
+        filter: hue-rotate(-40deg);
+    }
+
+    100% {
+        filter: hue-rotate(10deg);
+    }
+}
+
+/* Autumn Tree */
+#autumnTree {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    clip-path: polygon(100% 86%, 98% 85%, 96% 85%, 94% 81%, 97% 80%, 97% 76%, 100% 75%, 100% 41%, 96% 41%, 92% 41%, 89% 41%, 87% 43%, 82% 42%, 79% 42%, 70% 46%, 73% 56%, 70% 63%, 73% 68%, 81% 67%, 90% 76%, 91% 86%, 83% 88%, 72% 89%, 63% 94%, 60% 100%, 100% 100%);
+    /* https://tools.webdevpuneet.com/css-clip-path-generator/ */
+    cursor: pointer;
+    z-index: 1;
+    transition: filter 0.5s ease;
+}
+
+#autumnTree:hover {
+    filter: brightness(110%)
+}
+
+/* Clouds */
+#clouds {
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    z-index: -1;
+    animation: clouds 75s ease forwards;
+    opacity: 1;
+}
+
+@keyframes clouds {
+    0% {
+        transform: translateX(-20vw);
+    }
+
+    100% {
+        transform: translateX(40vw);
+    }
+}
+
+#clouds2 {
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    z-index: -1;
+    animation: clouds2 60s ease forwards;
+    opacity: 0.9;
+}
+
+@keyframes clouds2 {
+    0% {
+        transform: translateX(-20vw);
+    }
+
+    100% {
+        transform: translateX(30vw);
+    }
+}
+
+/* Sky background */
+#sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none;
+    animation: skyColor 12s ease forwards;
+}
+
+@keyframes skyColor {
+    0% {
+        filter: hue-rotate(80deg) brightness(60%);
+    }
+
+    100% {
+        filter: hue-rotate(0deg);
+    }
+}
+
+/* Sun */
+#sun {
+    position: absolute;
+    width: 7vw;
+    height: 7vw;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, #ffe864, #f5b235); /* med hjelp av chatGPT for å få en finere sol*/
+    border-radius: 50%;
+    z-index: -1;
+    animation: sunRise 12s ease forwards;
+    cursor: pointer;
+    transition: filter 0.5s ease;
+}
+
+#sun:hover {
+    filter: brightness(110%);
+}
+
+@keyframes sunRise {
+    0% {
+        transform: translate(-50%, -20vw);
+    }
+
+    100% {
+        transform: translate(-50%, -35vw);
+    }
+}
+
+/* Title Text */
+#h1-tittel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3vw;
+    color: rgb(230, 245, 178);
+    text-shadow: 2px 2px 1px orange;
+    text-align: center;
+    z-index: 4;
+    pointer-events: none;
+    animation: h1 5s ease-in;
+}
+
+@keyframes h1 {
+    0% {
+        opacity: 0%;
+        filter: blur(5px);
+    }
+
+    100% {
+        opacity: 100%;
+        filter: blur(0px);
+    }
+}
+
+/* Snowman */
+#snowman {
+    position: absolute;
+    bottom: 5%;
+    left: 20%;
+    transform: translateX(-50%);
+    width: 20%;
+    z-index: 5;
+    cursor: pointer;
+    transition: all 0.6s ease;
+}
+
+#snowman:hover {
+    filter: brightness(110%)
+}
+
+#kyckling {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    clip-path: polygon(50% 80%, 56% 81%, 56% 91%, 49% 92%);
+    opacity: 1;
+
+}
+
+#kycklingBorn {
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    clip-path: polygon(50% 80%, 56% 81%, 56% 91%, 49% 92%);
+    opacity: 0;
+    cursor: pointer;
+
+}
+
+
+#kycklingBorn:hover {
+    opacity: 1;
+
+
+}
+
+
+
+#arrow {
+    position: absolute;
+    transform: scale(50);
+    z-index: 3;
+    clip-path: polygon(4% 17%, 13% 17%, 12% 25%, 5% 25%);
+
+
+}
